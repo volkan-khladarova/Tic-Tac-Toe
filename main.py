@@ -26,11 +26,13 @@ def check_winner(board, player):
 
 # Check for a draw
 def check_draw(board):
-    for row in board: # Iterate through each row of the board
-        for cell in row: # Iterate through each cell in the row
-            if cell == " ": # If there's an empty cell, return False (game isn't over)
-                return False
-    return True # If no empty cells are left, return True (it's a draw)
+    # Check if there are any numbers (1-9) left on the board
+    for row in board:  # Iterate through each row of the board
+        for cell in row:  # Iterate through each cell in the row
+            if cell not in ["X", "O"]:  # If the cell is a number (empty space), it's not a draw yet
+                return False  # Return False if the game is not over (there are still numbers left)
+    return True  # Return True if no numbers are left, indicating a draw
+
 
 # Check if the move is valid
 def valid_move(board, move):
