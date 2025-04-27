@@ -38,12 +38,13 @@ class TicTacToe:
                     return False  # The game isn't over yet
         return True  # If all cells are filled, it's a draw
 
-# Check if the move is valid
-def valid_move(board, move):
-    if move < 1 or move > 9: # Check if the move is between 1 and 9
-        return False # Return False if the move is out of range
-    row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column (0-2)
-    return board[row][col] not in ["X", "O"] # Return True if the chosen cell is empty
+    # Function to validate if a player's move is valid
+    def valid_move(self, move):
+        # Check if the move is within the range 1-9
+        if move < 1 or move > 9:
+            return False  # Return False if the move is out of bounds
+        row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column indexes (0-2)
+        return self.board[row][col] not in ["X", "O"]  # Return True if the cell is not occupied by "X" or "O"
 
 # Make the move and update the board
 def make_move(board, move, player):
