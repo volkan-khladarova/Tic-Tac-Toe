@@ -14,14 +14,20 @@ class TicTacToe:
                 print("---------")  # Print a separator between rows
         print("\n")  # Print a newline for better formatting
 
-# Check for a draw
-def check_draw(board):
-    # Check if there are any numbers (1-9) left on the board
-    for row in board:  # Iterate through each row of the board
-        for cell in row:  # Iterate through each cell in the row
-            if cell not in ["X", "O"]:  # If the cell is a number (empty space), it's not a draw yet
-                return False  # Return False if the game is not over (there are still numbers left)
-    return True  # Return True if no numbers are left, indicating a draw
+    # Function to check if the current player has won
+    def check_winner(self):
+        # Check rows, columns, and diagonals for a winner
+        for i in range(3):  # Check each row
+            if self.board[i][0] == self.board[i][1] == self.board[i][2] == self.current_player:
+                return True  # Return True if a horizontal winner is found
+            if self.board[0][i] == self.board[1][i] == self.board[2][i] == self.current_player:
+                return True  # Return True if a vertical winner is found
+        # Check both diagonals for a winner
+        if self.board[0][0] == self.board[1][1] == self.board[2][2] == self.current_player:
+            return True  # Return True if a diagonal winner is found (top-left to bottom-right)
+        if self.board[0][2] == self.board[1][1] == self.board[2][0] == self.current_player:
+            return True  # Return True if a diagonal winner is found (top-right to bottom-left)
+        return False  # Return False if no winner is found
 
 
 # Check if the move is valid
