@@ -46,9 +46,11 @@ class TicTacToe:
         row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column indexes (0-2)
         return self.board[row][col] not in ["X", "O"]  # Return True if the cell is not occupied by "X" or "O"
 
-# Make the move and update the board
-def make_move(board, move, player):
-    row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column (0-2)
+    # Function to make a move and update the board
+    def make_move(self, move):
+        # Convert the move (1-9) to row and column indexes (0-2)
+        row, col = divmod(move - 1, 3)
+        self.board[row][col] = self.current_player  # Place the current player's symbol ("X" or "O") on the board
 
     # If the cell is already occupied, it's an invalid move
     if board[row][col] in ["X", "O"]:
