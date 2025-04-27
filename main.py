@@ -17,12 +17,12 @@ def check_winner(board, player):
         # Check vertical rows
         if board[0][i] == board[1][i] == board[2][i] == player:
             return True # Return True if there's a vertical winner
-        # Check diagonal rows
-        if board[0][0] == board[1][1] == board[2][2] == player:
-            return True # Return True if there's a diagonal winner (top-left to bottom-right)
-        if board[0][2] == board[1][1] == board[2][0] == player:
-            return  True  # Return True if there's a diagonal winner (top-right to bottom-left)
-        return False # Return False if no winner
+    # Check diagonal rows
+    if board[0][0] == board[1][1] == board[2][2] == player:
+        return True # Return True if there's a diagonal winner (top-left to bottom-right)
+    if board[0][2] == board[1][1] == board[2][0] == player:
+        return  True  # Return True if there's a diagonal winner (top-right to bottom-left)
+    return False # Return False if no winner
 
 # Check for a draw
 def check_draw(board):
