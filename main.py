@@ -100,4 +100,5 @@ class TicTacToe:
 
 # To start the game
 if __name__ == "__main__":
-    play_game() # Call the play_game function to start the game
+    game = TicTacToe()  # Create an instance of the TicTacToe class
+    game.play_game()  # Start the game by calling the play_game method
