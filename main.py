@@ -24,5 +24,13 @@ def check_winner(board, player):
             return  True  # Return True if there's a diagonal winner (top-right to bottom-left)
         return False # Return False if no winner
 
+# Check for a draw
+def check_draw(board):
+    for row in board: # Iterate through each row of the board
+        for cell in row: # Iterate through each cell in the row
+            if cell == " ": # If there's an empty cell, return False (game isn't over)
+                return False
+    return True # If no empty cells are left, return True (it's a draw)
+
 
 board = [[" " for _ in range(3)] for _ in range(3)]  # Initialize a 3x3 grid with empty spaces
