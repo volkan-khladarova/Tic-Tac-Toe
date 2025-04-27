@@ -29,6 +29,14 @@ class TicTacToe:
             return True  # Return True if a diagonal winner is found (top-right to bottom-left)
         return False  # Return False if no winner is found
 
+    # Function to check if the game has ended in a draw
+    def check_draw(self):
+        # Check if there are any numbers (1-9) left on the board, meaning the game isn't finished
+        for row in self.board:
+            for cell in row:
+                if cell not in ["X", "O"]:  # If a cell still contains a number
+                    return False  # The game isn't over yet
+        return True  # If all cells are filled, it's a draw
 
 # Check if the move is valid
 def valid_move(board, move):
