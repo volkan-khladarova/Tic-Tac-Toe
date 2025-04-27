@@ -39,4 +39,9 @@ def valid_move(board, move):
     row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column (0-2)
     return board[row][col] == " " # Return True if the chosen cell is empty
 
+# Make the move and update the board
+def make_move(boar, move, player):
+    row, col = divmod(move - 1, 3) # Convert the move (1-9) to row and column (0-2)
+    boar[row][col] = player # Set the chosen cell to the current player's symbol
+
 board = [[" " for _ in range(3)] for _ in range(3)]  # Initialize a 3x3 grid with empty spaces
