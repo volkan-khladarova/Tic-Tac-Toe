@@ -63,8 +63,9 @@ class TicTacToe:
         player1 = input("Enter name for Player 1 (X): ")
         player2 = input("Enter name for Player 2 (O): ")
 
-    # The loop continues until the game is over
-    game_over = False # Set a flag to track the game status
+        # Loop until the game is over
+        while not self.game_over:
+            self.print_board()  # Print the current state of the board
 
     while not game_over: # Keep looping until the game is over
         # Print the current state of the board
