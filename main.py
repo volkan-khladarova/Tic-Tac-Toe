@@ -1,11 +1,9 @@
-# Initializing the game board
-def print_board(board):
-    print("\n") # Add new line for better formatting
-    for i in range(3):
-        print(" | ".join(board[i])) # Print each row, joining elements whit " | "
-        if i < 2:
-            print("---------") # Print separators between rows, except after the last row
-    print("\n") # Add new line for better formatting
+class TicTacToe:
+    def __init__(self):
+        # Initialize the game state
+        self.board = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]]  # Create a 3x3 board with numbers from 1-9
+        self.current_player = "X"  # Player "X" starts the game
+        self.game_over = False  # Game state flag, initially set to False (game is not over)
 
 # Checking for a winner
 def check_winner(board, player):
