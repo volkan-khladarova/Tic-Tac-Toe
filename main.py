@@ -96,3 +96,11 @@ def play_game():
              print_board(board)
              print("It's a draw!")  # Declare the draw
              game_over = True  # End the game
+
+        # Switch players
+        current_player = "O" if current_player == "X" else "X"  # Switch between X and O
+
+
+# Start the game
+if __name__ == "__main__":
+    play_game() # Call the play_game function to start the game
