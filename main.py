@@ -52,9 +52,10 @@ class TicTacToe:
         row, col = divmod(move - 1, 3)
         self.board[row][col] = self.current_player  # Place the current player's symbol ("X" or "O") on the board
 
-    # If the cell is already occupied, it's an invalid move
-    if board[row][col] in ["X", "O"]:
-        return False  # Return False if the cell is already occupied
+    # Function to switch to the next player
+    def switch_player(self):
+        # Switch between players "X" and "O"
+        self.current_player = "O" if self.current_player == "X" else "X"
 
     board[row][col] = player  # Set the chosen cell to the current player's symbol
     return True  # Return True to indicate the move was successful
