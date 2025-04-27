@@ -57,19 +57,11 @@ class TicTacToe:
         # Switch between players "X" and "O"
         self.current_player = "O" if self.current_player == "X" else "X"
 
-    board[row][col] = player  # Set the chosen cell to the current player's symbol
-    return True  # Return True to indicate the move was successful
-
-# Main game loop
-def play_game():
-    # Get player names
-    player1 = input("Enter name for Player 1 (X): ")
-    player2 = input("Enter name for Player 2 (O): ")
-    # Start with an empty board
-    board = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]]  # Initialize a 3x3 grid with empty spaces
-
-    # The first player is X
-    current_player = "X"  # Set the first player to X
+    # Main game loop that handles the gameplay
+    def play_game(self):
+        # Ask for player names
+        player1 = input("Enter name for Player 1 (X): ")
+        player2 = input("Enter name for Player 2 (O): ")
 
     # The loop continues until the game is over
     game_over = False # Set a flag to track the game status
