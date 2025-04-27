@@ -32,5 +32,11 @@ def check_draw(board):
                 return False
     return True # If no empty cells are left, return True (it's a draw)
 
+# Check if the move is valid
+def valid_move(board, move):
+    if move < 1 or move > 9: # Check if the move is between 1 and 9
+        return False # Return False if the move is out of range
+    row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column (0-2)
+    return board[row][col] == " " # Return True if the chosen cell is empty
 
 board = [[" " for _ in range(3)] for _ in range(3)]  # Initialize a 3x3 grid with empty spaces
