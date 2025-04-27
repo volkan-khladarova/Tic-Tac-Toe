@@ -91,4 +91,8 @@ def play_game():
                 print(f"{player2} wins!")  # Announce Player 2 as the winner
             game_over = True  # End the game
 
-board = [[" " for _ in range(3)] for _ in range(3)]  # Initialize a 3x3 grid with empty spaces
+        # Check if the game ended in a draw
+        elif check_draw(board):
+             print_board(board)
+             print("It's a draw!")  # Declare the draw
+             game_over = True  # End the game
