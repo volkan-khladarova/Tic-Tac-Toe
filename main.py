@@ -67,15 +67,11 @@ class TicTacToe:
         while not self.game_over:
             self.print_board()  # Print the current state of the board
 
-    while not game_over: # Keep looping until the game is over
-        # Print the current state of the board
-        print_board(board)
-
-        # Prompt the user to make a move
-        if current_player == "X":
-            move = int(input(f"{player1}'s turn (X), enter your move (1-9): "))  # Get Player 1's move
-        else:
-            move = int(input(f"{player2}'s turn (O), enter your move (1-9): "))  # Get Player 2's move
+            # Prompt the current player to enter their move
+            if self.current_player == "X":
+                move = int(input(f"{player1}'s turn (X), enter your move (1-9): "))  # Player 1's turn
+            else:
+                move = int(input(f"{player2}'s turn (O), enter your move (1-9): "))  # Player 2's turn
 
         # Check if the move is valid
         if not valid_move(board, move):
