@@ -37,7 +37,7 @@ def valid_move(board, move):
     if move < 1 or move > 9: # Check if the move is between 1 and 9
         return False # Return False if the move is out of range
     row, col = divmod(move - 1, 3)  # Convert the move (1-9) to row and column (0-2)
-    return board[row][col] == " " # Return True if the chosen cell is empty
+    return board[row][col] not in ["X", "O"] # Return True if the chosen cell is empty
 
 # Make the move and update the board
 def make_move(board, move, player):
