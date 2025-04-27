@@ -73,10 +73,10 @@ class TicTacToe:
             else:
                 move = int(input(f"{player2}'s turn (O), enter your move (1-9): "))  # Player 2's turn
 
-        # Check if the move is valid
-        if not valid_move(board, move):
-            print("Invalid move. Please try again.") # If the move is invalid, ask the player to try again
-            continue # Skip the rest of the loop and prompt the user again
+            # Check if the move is valid, and ask for a valid move if it's not
+            if not self.valid_move(move):
+                print("Invalid move. Please try again.")  # Notify the player if the move is invalid
+                continue  # Skip the rest of the loop and prompt the player again
 
         # Make the move on the board
         make_move(board, move, current_player)
