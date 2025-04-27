@@ -93,14 +93,7 @@ class TicTacToe:
                 print("It's a draw!")  # Announce the draw
                 self.game_over = True  # Set the game state to over
             else:
-                print(f"{player2} wins!")  # Announce Player 2 as the winner
-            game_over = True  # End the game
-
-        # Check if the game ended in a draw
-        elif check_draw(board):
-             print_board(board)
-             print("It's a draw!")  # Declare the draw
-             game_over = True  # End the game
+                self.switch_player()  # Switch to the next player for the next turn
 
         # Switch players
         current_player = "O" if current_player == "X" else "X"  # Switch between X and O
