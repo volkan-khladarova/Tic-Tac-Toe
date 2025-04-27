@@ -78,8 +78,8 @@ class TicTacToe:
                 print("Invalid move. Please try again.")  # Notify the player if the move is invalid
                 continue  # Skip the rest of the loop and prompt the player again
 
-        # Make the move on the board
-        make_move(board, move, current_player)
+            # Make the move on the board
+            self.make_move(move)
 
         # Check if the current player has won
         if check_winner(board, current_player):
