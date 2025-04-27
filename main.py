@@ -81,11 +81,17 @@ class TicTacToe:
             # Make the move on the board
             self.make_move(move)
 
-        # Check if the current player has won
-        if check_winner(board, current_player):
-            print_board(board)
-            if current_player == "X":
-                print(f"{player1} wins!")  # Announce Player 1 as the winner
+            # Check if the current player has won
+            if self.check_winner():
+                self.print_board()  # Print the final board
+                winner = player1 if self.current_player == "X" else player2  # Determine the winner based on the symbol
+                print(f"{winner} wins!")  # Announce the winner
+                self.game_over = True  # Set the game state to over
+            # Check if the game has ended in a draw
+            elif self.check_draw():
+                self.print_board()  # Print the final board
+                print("It's a draw!")  # Announce the draw
+                self.game_over = True  # Set the game state to over
             else:
                 print(f"{player2} wins!")  # Announce Player 2 as the winner
             game_over = True  # End the game
